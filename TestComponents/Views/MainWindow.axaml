@@ -1,0 +1,117 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TestComponents.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:TestComponents.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TestComponents.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TestComponents"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <vm:MainViewModel/>
+  </Design.DataContext>
+  <Window.Resources>
+    <StreamGeometry x:Key="TreeViewItemCollapsedNewPathData">M4.56522 4C3.70697 4 3 4.70978 3 5.57143V10.2857V11.3333V24.4286C3 25.2902 3.70697 26 4.56522 26H25.4348C26.293 26 27 25.2902 27 24.4286V11.8571V10.2857V7.66667C27 6.80502 26.293 6.09524 25.4348 6.09524H11.3478C11.393 6.09524 11.3316 6.09543 11.2041 5.94792C11.0766 5.8004 10.9197 5.55568 10.7558 5.29315C10.5919 5.03063 10.4201 4.75051 10.2035 4.50437C9.98687 4.25823 9.68805 4 9.26087 4H4.56522ZM4.56522 5.04762H9.26087C9.22917 5.04762 9.29277 5.05129 9.42188 5.19801C9.55098 5.34473 9.70812 5.58842 9.87126 5.8497C10.0344 6.11098 10.2034 6.39007 10.4154 6.63542C10.6275 6.88076 10.9194 7.14286 11.3478 7.14286H25.4348C25.7296 7.14286 25.9565 7.3707 25.9565 7.66667V8.8125C25.7922 8.75302 25.6184 8.71429 25.4348 8.71429H4.56522C4.38165 8.71429 4.20777 8.75302 4.04348 8.8125V5.57143C4.04348 5.27546 4.27042 5.04762 4.56522 5.04762ZM4.56522 9.76191H25.4348C25.7296 9.76191 25.9565 9.98975 25.9565 10.2857V11.8571V24.4286C25.9565 24.7245 25.7296 24.9524 25.4348 24.9524H4.56522C4.27042 24.9524 4.04348 24.7245 4.04348 24.4286V11.3333V10.2857C4.04348 9.98975 4.27042 9.76191 4.56522 9.76191Z</StreamGeometry>
+    <StreamGeometry x:Key="TreeViewItemExpandedNewPathData">M1.81486 0.239502C1.35208 0.239502 0.970639 0.612729 0.970639 1.06555V11.2276C0.953051 11.2911 0.959647 11.3578 0.988227 11.4169C1.06737 11.7923 1.41034 12.0795 1.81486 12.0795H12.7897C13.2096 12.0795 13.5548 11.7697 13.6163 11.3739C13.6185 11.3567 13.624 11.3395 13.6251 11.3223C13.6251 11.3169 13.6251 11.3105 13.6251 11.3051L13.6339 11.2621C13.6339 11.2588 13.6339 11.2567 13.6339 11.2535L15.0321 3.87067L15.0409 3.84485V3.81904C15.0409 3.36622 14.6595 2.99299 14.1967 2.99299V2.16694C14.1967 1.71412 13.8153 1.3409 13.3525 1.3409H6.04474C6.04584 1.34197 6.04254 1.3409 6.03595 1.3409C6.02715 1.33444 6.00187 1.31401 5.9568 1.26346C5.88755 1.18601 5.8073 1.05694 5.71936 0.91927C5.63143 0.781595 5.53689 0.635316 5.42037 0.506246C5.30385 0.377176 5.14116 0.239502 4.91032 0.239502H1.81486ZM1.81486 0.7902H4.91032C4.89273 0.7902 4.92901 0.7902 4.99826 0.867642C5.06751 0.945083 5.14776 1.07415 5.2357 1.21183C5.32364 1.3495 5.42037 1.49578 5.53469 1.62485C5.64901 1.75392 5.80511 1.8916 6.03595 1.8916H13.3525C13.5108 1.8916 13.6339 2.01206 13.6339 2.16694V2.99299H3.22189C2.77889 2.99299 2.42604 3.34148 2.39526 3.76741H2.38646L2.37767 3.81904L1.53345 8.27625V1.06555C1.53345 0.910665 1.65657 0.7902 1.81486 0.7902ZM3.22189 3.54369H14.1967C14.355 3.54369 14.4781 3.66415 14.4781 3.81904L13.0975 11.1244L13.0887 11.1416C13.0854 11.1524 13.0821 11.1642 13.0799 11.176C13.0766 11.1868 13.0733 11.1986 13.0711 11.2104C13.0711 11.2158 13.0711 11.2223 13.0711 11.2276C13.0711 11.2309 13.0711 11.233 13.0711 11.2362C13.0667 11.2502 13.0645 11.2642 13.0623 11.2793C13.0612 11.2879 13.0634 11.2965 13.0623 11.3051C13.0612 11.3169 13.0612 11.3277 13.0623 11.3395C13.0271 11.4514 12.9183 11.5288 12.7897 11.5288H1.81486C1.65657 11.5288 1.53345 11.4083 1.53345 11.2535L2.93169 3.87067L2.94048 3.84485V3.81904C2.94048 3.66415 3.0636 3.54369 3.22189 3.54369Z</StreamGeometry>
+    <StreamGeometry x:Key="TreeViewItemCollapsedChevronPathData">M4.56522 4C3.70697 4 3 4.70978 3 5.57143V10.2857V11.3333V24.4286C3 25.2902 3.70697 26 4.56522 26H25.4348C26.293 26 27 25.2902 27 24.4286V11.8571V10.2857V7.66667C27 6.80502 26.293 6.09524 25.4348 6.09524H11.3478C11.393 6.09524 11.3316 6.09543 11.2041 5.94792C11.0766 5.8004 10.9197 5.55568 10.7558 5.29315C10.5919 5.03063 10.4201 4.75051 10.2035 4.50437C9.98687 4.25823 9.68805 4 9.26087 4H4.56522ZM4.56522 5.04762H9.26087C9.22917 5.04762 9.29277 5.05129 9.42188 5.19801C9.55098 5.34473 9.70812 5.58842 9.87126 5.8497C10.0344 6.11098 10.2034 6.39007 10.4154 6.63542C10.6275 6.88076 10.9194 7.14286 11.3478 7.14286H25.4348C25.7296 7.14286 25.9565 7.3707 25.9565 7.66667V8.8125C25.7922 8.75302 25.6184 8.71429 25.4348 8.71429H4.56522C4.38165 8.71429 4.20777 8.75302 4.04348 8.8125V5.57143C4.04348 5.27546 4.27042 5.04762 4.56522 5.04762ZM4.56522 9.76191H25.4348C25.7296 9.76191 25.9565 9.98975 25.9565 10.2857V11.8571V24.4286C25.9565 24.7245 25.7296 24.9524 25.4348 24.9524H4.56522C4.27042 24.9524 4.04348 24.7245 4.04348 24.4286V11.3333V10.2857C4.04348 9.98975 4.27042 9.76191 4.56522 9.76191Z</StreamGeometry>
+    <StreamGeometry x:Key="TreeViewItemExpandedChevronPathData">M1.81486 0.239502C1.35208 0.239502 0.970639 0.612729 0.970639 1.06555V11.2276C0.953051 11.2911 0.959647 11.3578 0.988227 11.4169C1.06737 11.7923 1.41034 12.0795 1.81486 12.0795H12.7897C13.2096 12.0795 13.5548 11.7697 13.6163 11.3739C13.6185 11.3567 13.624 11.3395 13.6251 11.3223C13.6251 11.3169 13.6251 11.3105 13.6251 11.3051L13.6339 11.2621C13.6339 11.2588 13.6339 11.2567 13.6339 11.2535L15.0321 3.87067L15.0409 3.84485V3.81904C15.0409 3.36622 14.6595 2.99299 14.1967 2.99299V2.16694C14.1967 1.71412 13.8153 1.3409 13.3525 1.3409H6.04474C6.04584 1.34197 6.04254 1.3409 6.03595 1.3409C6.02715 1.33444 6.00187 1.31401 5.9568 1.26346C5.88755 1.18601 5.8073 1.05694 5.71936 0.91927C5.63143 0.781595 5.53689 0.635316 5.42037 0.506246C5.30385 0.377176 5.14116 0.239502 4.91032 0.239502H1.81486ZM1.81486 0.7902H4.91032C4.89273 0.7902 4.92901 0.7902 4.99826 0.867642C5.06751 0.945083 5.14776 1.07415 5.2357 1.21183C5.32364 1.3495 5.42037 1.49578 5.53469 1.62485C5.64901 1.75392 5.80511 1.8916 6.03595 1.8916H13.3525C13.5108 1.8916 13.6339 2.01206 13.6339 2.16694V2.99299H3.22189C2.77889 2.99299 2.42604 3.34148 2.39526 3.76741H2.38646L2.37767 3.81904L1.53345 8.27625V1.06555C1.53345 0.910665 1.65657 0.7902 1.81486 0.7902ZM3.22189 3.54369H14.1967C14.355 3.54369 14.4781 3.66415 14.4781 3.81904L13.0975 11.1244L13.0887 11.1416C13.0854 11.1524 13.0821 11.1642 13.0799 11.176C13.0766 11.1868 13.0733 11.1986 13.0711 11.2104C13.0711 11.2158 13.0711 11.2223 13.0711 11.2276C13.0711 11.2309 13.0711 11.233 13.0711 11.2362C13.0667 11.2502 13.0645 11.2642 13.0623 11.2793C13.0612 11.2879 13.0634 11.2965 13.0623 11.3051C13.0612 11.3169 13.0612 11.3277 13.0623 11.3395C13.0271 11.4514 12.9183 11.5288 12.7897 11.5288H1.81486C1.65657 11.5288 1.53345 11.4083 1.53345 11.2535L2.93169 3.87067L2.94048 3.84485V3.81904C2.94048 3.66415 3.0636 3.54369 3.22189 3.54369Z</StreamGeometry>
+  </Window.Resources>
+  <Window.Styles>
+    <Style Selector="ToggleButton:checked /template/ Path#ChevronPath">
+      <Setter Property="Data" Value="{StaticResource TreeViewItemExpandedChevronPathData}" />
+    </Style>
+    <Style Selector="ToggleButton:unchecked /template/ Path#ChevronPath">
+      <Setter Property="Data" Value="{StaticResource TreeViewItemCollapsedChevronPathData}" />
+    </Style>
+    <Style Selector="TreeViewItem /template/ ToggleButton#PART_ExpandCollapseChevron">
+      <Setter Property="Width" Value="20"></Setter>
+      <Setter Property="Height" Value="20"></Setter>
+    </Style>
+  </Window.Styles>
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial
+            BackgroundSource="Digger"
+            TintColor="Black"
+            TintOpacity="1"
+            MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    
+
+    <StackPanel>
+      <SelectableTextBlock TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding $self.Text}">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </SelectableTextBlock>
+      <TreeView ItemsSource="{Binding League}">
+        <TreeView.DataTemplates>
+          <TreeDataTemplate DataType="vm:Conference" ItemsSource="{Binding Teams}">
+            <TextBlock Foreground="Red" Text="{Binding ConferenceName}" />
+          </TreeDataTemplate>
+          <TreeDataTemplate DataType="vm:Team" ItemsSource="{Binding Players}">
+            <TextBlock Foreground="Green" Text="{Binding TeamName}" />
+          </TreeDataTemplate>
+          <DataTemplate DataType="vm:Person">
+            <TextBlock Text="{Binding Name}" />
+          </DataTemplate>
+        </TreeView.DataTemplates>
+      </TreeView>
+
+      <TreeView ItemsSource="{Binding Nodes}">
+        <TreeView.ItemTemplate>
+          <TreeDataTemplate ItemsSource="{Binding SubNodes}" >
+            <StackPanel Orientation="Horizontal" Margin="-1">
+              <!-- Custom expand/collapse button -->
+              <Rectangle Width="1" Height="10" Fill="Gray" IsVisible="{Binding}"/>
+              <!-- Vertical connecting line -->
+              <Rectangle Width="10" Height="1" Fill="Gray"/>
+              <!-- Node title -->
+              <TextBlock Text="{Binding Title}" Margin="5 0" Padding="0"/>
+            </StackPanel>
+          </TreeDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+      <SplitView IsPaneOpen="False"
+           DisplayMode="CompactOverlay"
+           OpenPaneLength="300"
+                 PanePlacement="Right"
+                 >
+        <SplitView.Pane>
+          <TextBlock Text="Pane"
+                     FontSize="24"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"/>
+        </SplitView.Pane>
+
+        <Grid>
+          <Path Stroke="Blue" StrokeThickness="2" PointerEntered="Path_PointerEntered" >
+            <Path.Data>
+              <PathGeometry>
+                <PathGeometry.Figures>
+                  <PathFigures>
+                    <PathFigure StartPoint="10,100">
+                      <PathFigure.Segments>
+                        <PathSegments>
+                          <BezierSegment Point1="100,0"
+                                         Point2="200,200"
+                                         Point3="300,100"
+                                              />
+                        </PathSegments>
+                      </PathFigure.Segments>
+                    </PathFigure>
+                  </PathFigures>
+                </PathGeometry.Figures>
+              </PathGeometry>
+            </Path.Data>
+          </Path>
+        </Grid>
+      </SplitView>
+    </StackPanel>
+  </Panel>
+</Window>
